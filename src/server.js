@@ -18,8 +18,8 @@ app.use("/movies", movieRoutes);
 app.use("/auth", authRoutes);
 app.use("/watchList", watchlistRoute)
 
-const PORT = 5001;
-const server = app.listen(PORT, () => {
+
+const server = app.listen(process.env.PORT || 5001, "0.0.0.0", () => {
     console.log(`Server running on PORT ${PORT}`);
 });
 
