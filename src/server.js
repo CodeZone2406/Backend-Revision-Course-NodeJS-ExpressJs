@@ -18,9 +18,10 @@ app.use("/movies", movieRoutes);
 app.use("/auth", authRoutes);
 app.use("/watchList", watchlistRoute)
 
+const port = process.env.PORT || 5001
 
-const server = app.listen(process.env.PORT || 5001, "0.0.0.0", () => {
-    console.log(`Server running on PORT ${process.env.PORT}`);
+const server = app.listen(port, "0.0.0.0", () => {
+    console.log(`Server running on PORT ${port}`);
 });
 
 process.on("unhandledRejection", async (err) => {
